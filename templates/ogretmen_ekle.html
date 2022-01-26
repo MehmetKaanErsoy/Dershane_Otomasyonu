@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="" style="margin-top: 20px">
+        {% if messages %}
+            {% for message in messages %}
+
+                {% if message.tags == "info" %}
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="fas fa-info-circle"></i> Bilgilendirme!</h4>
+                        {{ message }}
+                    </div>
+                {% elif message.tags == "error" %}
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="fas fa-times"></i> Hata!</h4>
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="icon fa fa-check"></i> Başarılı!</h4>
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <form method="post" enctype="multipart/form-data" style="margin-top: 40px">
+        {% csrf_token %}
+        {{ form.Ogretmen_adisoyadi }}
+        {{ form.Ogretmen_TC }}
+        {{ form.Ogretmen_Telefon }}
+        {{ form.Ogretmen_Brans }}
+        {{ form.Ogretmen_KacYıllıkSozlesme }}
+        {{ form.Ogretmen_Evlimi }}
+        {{ form.Ogretmen_Maas }}
+        {{ form.Ogretmen_Adres }}
+        <div class="" style="margin-left: 550px;margin-top: 20px">
+            {{ form.Ogretmen_Resim }}
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 200px;height: 55px;
+        font-size: 29px;margin-left: 380px;margin-top: 30px">Kayıt Et
+        </button>
+    </form>
+{% endblock %}

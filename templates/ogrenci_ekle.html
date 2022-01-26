@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block deger %}
+    <div class="card" style="height: 500px;width: 100%;">
+        <form action="" method="post" id="bayiekleform">
+            {% csrf_token %}
+            <div class="field" style="margin-top: 52px">
+                {{ form.Veli_AdıSoyadi }}
+                {{ form.VeliTel }}
+                {{ form.OgrenciTC }}
+                {{ form.OgrenciAdi_Soyadi }}
+                {{ form.OgrenciTel }}
+                {{ form.OgrenciOkul }}
+                {{ form.kacinci_sınıf }}
+                {{ form.Odenecek_Ucret }}
+                {{ form.Taksit_Bolme }}
+                {{ form.Adres}}
+                <div class="control has-icons-left"
+                     style="margin-left: 300px;margin-top: 40px">
+                    <button class="btn btn-success"
+                            style="margin-left: 110px;width: 190px;height: 50px;font-size: 20px"> Öğrenciyi Kayıt Et
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

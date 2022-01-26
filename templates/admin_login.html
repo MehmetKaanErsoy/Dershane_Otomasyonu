@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+    <link rel="stylesheet" href="{% static 'tas.css' %}">
+    <style>
+        * {
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color: #2d2d2b">
+
+<div>
+    <div id="formbu" class="card" style="margin-top: 50px;width: 0;vertical-align: middle;display: inline-block;">
+        <div class="container" style="height: 400px;width: 420px;box-shadow: 0 3px 10px 0 #363030;
+    background-color: white;padding: 20px;border-radius: 10px;margin-left: 450px;">
+            <center>
+                <div class="icon" style="width: 150px">
+                    <i class="fas fa-user-shield" style="font-size: 120px;color:#6e48ab;"></i>
+                </div>
+            </center>
+            <center>
+                <form method="POST" action="." class="box" style="margin-top: -80px">
+                    {% csrf_token %}
+                    <div class="field" style="margin-top: 100px;margin-right: 15px">
+                        <div class="control has-icons-left" style="margin-left: 230px;margin-top: 5px">
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <div class="field" style="margin-top: -27px">
+                        <div class="control has-icon"
+                             style="margin-left: 230px;margin-top: 25px;margin-right: 15px">
+                            <icon>
+                                <i class="fa fa-amazon-pay"></i>
+                            </icon>
+                            {{ form.password }}
+                        </div>
+                    </div>
+                    <div class="field" style="margin-top: 20px">
+                        <input type="checkbox" style="height: 17px;width: 17px;background-color: #6e48ab;margin-top: 10px"></input>
+                        <a href="#"
+                           style="margin-top: -5px; color: #6e48ab;font-size: 15px;;font-family: 'Segoe UI Semibold'">Beni
+                            Hatırla</a>
+                        <a href=""
+                           style="margin-left: 75px;color: #6e48ab;font-size: 15px;font-family: 'Segoe UI Semibold'">Parolamı
+                            Unuttum</a>
+                    </div>
+                    <center>
+                        <div class="field">
+                            <button class="btn" type="submit"
+                                    style="width: 120px; height: 45px; margin-top: 10px;background-color: #6e48ab;color: white">
+                                Giriş Yap
+                            </button>
+                        </div>
+                    </center>
+                    <div class="cizgi" style="">
+                        <hr/>
+                    </div>
+                </form>
+            </center>
+        </div>
+    </div>
+
+</div>
+
+<script src="{% static 'plugins/ekko-lightbox/ekko-lightbox.js' %}"></script>
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="" style="margin-top: 20px">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="fas fa-times"></i> Hata!</h4>
+                        {{ message }}
+                    </div>
+                {% elif message.tags == "info" %}
+                    <div class="alert alert-info alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="fas fa-info-circle"></i> Bilgilendirme!</h4>
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4><i class="icon fa fa-check"></i> Başarılı!</h4>
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-md-2">
+        <div class="card"
+             style="margin-left: 100px;width: 350px;height: 450px;margin-top: 40px;
+             box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;font-style: italic">
+            <form method="post" style="margin-top: 30px">
+                {% csrf_token %}
+                <p style="text-align: center;font-weight: bold;font-size: 30px">Öğretmen Ata</p>
+                {{ form.sinif_sec }}
+                {{ form.ders_sec }}
+                {{ form.ogretmen_sec }}
+                <button href="{% url 'ogretmenata' %}"
+                        style="margin-left: 65px;margin-top:30px;width: 220px;height: 40px;font-size: 30px;"
+                        class="btn btn-warning">
+                    <p style="margin-top: -9px">
+                        <b>Kayıt Et</b>
+                    </p>
+                </button>
+            </form>
+        </div>
+    </div>
+    <hr style="margin-top: 50px;">
+    <h1 style="text-align: center;font-family: 'Segoe UI Semibold'">Dershanemize Ait Sınıflar</h1>
+    <hr style="margin-top: 20px;">
+    <div class="row m-auto" style="margin-top: 20px">
+        {% for i in data2 %}
+            <div class="col-md-3" style="margin-top: 20px">
+                <a href="/siniflar/{{ i.id }}"
+                   style="font-size: 20px;padding-top: 25px;width: 150px;height: 80px;margin-top: 2px;margin-bottom:30px"
+                   class="btn btn-warning"><b>{{ i.sinifsec }}/{{ i.harf }}</b>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

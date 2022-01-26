@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="card-body table-responsive p-0" style="margin-top: 30px;">
+        <table class="table table-hover text-nowrap">
+            <thead>
+            <tr>
+                <th>Sınıf</th>
+                <th>Matematik</th>
+                <th>Türkçe</th>
+                <th>Fizik</th>
+                <th>Biyoloji</th>
+                <th>Kimya</th>
+                <th>Tarih</th>
+                <th>Felsefe</th>
+                <th>Geometri</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ data.sinifsec }}/{{ data.harf }}</td>
+                <td>{{ data.Matematik }}</td>
+                <td>{{ data.Türkçe }}</td>
+                <td>{{ data.Fizik }}</td>
+                <td>{{ data.Biyoloji }}</td>
+                <td>{{ data.Kimya }}</td>
+                <td>{{ data.Tarih }}</td>
+                <td>{{ data.Felsefe }}</td>
+                <td>{{ data.Geometri }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

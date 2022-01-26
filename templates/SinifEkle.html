@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="control has-icons-left"
+             style="margin-left: 1px;margin-top: 50px">
+            {{ form.sinifsec }}
+            {{ form.harf }}
+        </div>
+        <div class="control has-icons-left"
+             style="margin-top: 20px;margin-bottom: 50px">
+            <button class="btn btn-success"
+                    style="margin-left: 57px;width: 190px;height: 50px;font-size: 20px"> Sınıf Ekle
+            </button>
+        </div>
+    </form>
+
+{% endblock %}

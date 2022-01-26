@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="card-body table-responsive p-0" style="margin-top: 30px;">
+        <table class="table table-hover text-nowrap">
+            <thead>
+            <tr>
+                <th>Ogrenci Adı</th>
+                <th>TC</th>
+                <th>Öğrenci Tel</th>
+                <th>Okul</th>
+                <th>Güncelle</th>
+                <th style="padding-left: 10px">Sil</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in data %}
+                <tr>
+                    <td>{{ i.OgrenciAdi_Soyadi }}</td>
+                    <td>{{ i.OgrenciTC }}</td>
+                    <td>{{ i.OgrenciTel }}</td>
+                    <td>{{ i.OgrenciOkul }}</td>
+                    <td><a href="/update/{{ i.id }}" class="btn btn-primary">Güncelle</a></td>
+                    <td><a onclick="return confirm('Silmek İstediğinize Eminmisiniz?')" href="/delete/{{ i.id }}"
+                           class="btn btn-danger" style="width: 80px">Sil</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

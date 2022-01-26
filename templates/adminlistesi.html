@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="" style="margin-top: 30px">
+        <div class="col-md-12">
+            <table class="table table-striped table-valign-middle ">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th style="padding-left: 110px">Kullancı Adı</th>
+                    <th style="padding-left: 80px">Mail</th>
+                    <th style="padding-left: 30px">Oluşturma Tarihi</th>
+                    <th style="padding-left: 40px">En Son Giriş</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in data %}
+                    <tr>
+                        <td>{{ i.id }}</td>
+                        <td style="padding-left: 150px">{{ i.username }}</td>
+                        <td>{{ i.email }}</td>
+                        <td>{{ i.date_joined }}</td>
+                        <td>{{ i.last_login }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

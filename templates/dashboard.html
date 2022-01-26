@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="row m-auto">
+        <div class="col-lg-3 col-6" style="margin-top: 70px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-gray-dark" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px">{{ data_ogrenci|length }}</h3>
+
+                    <p style="font-size: 20px;margin-top: -13px">Toplam Öğrenci</p>
+                    <p style="font-size: 20px;margin-top: -20px">Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <a href="{% url 'ogrencilist' %}" style="margin-top: -15px" class="small-box-footer">Daha fazla bilgi al <i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6" style="margin-top: 70px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-blue" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px">{{ data_ogretmen|length }}</h3>
+                    <p style="font-size: 20px;margin-top: -13px">Toplam Öğretmen</p>
+                    <p style="font-size: 20px;margin-top: -20px">Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <a href="{% url 'hocalistele' %}" style="margin-top: -15px" class="small-box-footer">Daha falza bilgi al
+                    <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6" style="margin-top: 70px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-orange" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px;color: white">{{ data_sınıf|length }}</h3>
+                    <p style="font-size: 20px;margin-top: -13px;color: white">Toplam Sınıf</p>
+                    <p style="font-size: 20px;margin-top: -20px;color:white;">Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-school"></i>
+                </div>
+                <a href="{% url 'siniflistele' %}" style="margin-top: -15px" class="small-box-footer">Daha fazla bilgi al
+                    <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6" style="margin-top: 70px">
+            <!-- small box -->
+            <div class="small-box bg-gradient-purple" style="height: 170px">
+                <div class="inner">
+                    <h3 style="font-size: 50px;color: white">{{ data_admin|length }}</h3>
+                    <p style="font-size: 20px;margin-top: -13px;color: white">Toplam Admin</p>
+                    <p style="font-size: 20px;margin-top: -20px;color:white;">Sayısı</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user-lock"></i>
+                </div>
+                <a href="{% url 'adminliste' %}" style="margin-top: -15px" class="small-box-footer">Daha fazla bilgi al
+                    <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

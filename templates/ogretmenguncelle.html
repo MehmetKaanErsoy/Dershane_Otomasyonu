@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block deger %}
+    <div class="container my-4" style="">
+        <div class="card my-3">
+            <div class="card-body">
+                {% if messages %}
+                    {% for msg in messages %}
+                        <p class="text-success">{{ msg }}</p>
+                    {% endfor %}
+                {% endif %}
+                <form method="post" action="/ogretmenguncelle/{{ data.id }}">
+                    {% csrf_token %}
+                    <table class="table table-hover">
+                        <tr class="">
+                            <th>Oğretmen Adi Soyadi</th>
+                            <td>
+                                <input value="{{ data.Ogretmen_adisoyadi }}" type="text" name="Ogretmen_adisoyadi"
+                                       class="form-control"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Oğretmen TC</th>
+                            <td>
+                                <input name="Ogretmen_TC" class="form-control" value="{{ data.Ogretmen_TC }}">
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <th>Oğretmen Telefon</th>
+                            <td>
+                                <input value="{{ data.Ogretmen_Telefon }}" name="Ogretmen_Telefon"
+                                       class="form-control"/>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <th>Oğretmen Branş</th>
+                            <td>
+                                <input  value="{{ data.Ogretmen_Brans }}" name="Ogretmen_Brans"
+                                       class="form-control"/>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <th>Oğretmen Resim</th>
+                            <td>
+                                <input type="file" value="{{ data.Ogretmen_Resim }}" name="Ogretmen_Resim"
+                                       class="form-control"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
